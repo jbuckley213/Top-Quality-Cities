@@ -1,3 +1,9 @@
+@import "reset.css";
+
+body {
+  font-size: 16px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -15,8 +21,16 @@ header {
   display: flex;
   justify-content: space-between;
 }
+header div {
+  height: 300px;
+  width: 300px;
+}
 header img {
-  width: 60%;
+  height: 100%;
+}
+
+section {
+  display: flex;
 }
 
 section img {
