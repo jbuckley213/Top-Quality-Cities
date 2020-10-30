@@ -105,6 +105,16 @@ header img {
 
 /*  signup */
 
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin: 20px auto;
+
+  justify-content: center;
+  height: auto;
+}
+
 .signup {
   margin: 50px auto;
   display: flex;
@@ -120,4 +130,19 @@ header img {
   margin: 20px auto;
 }
 
-/*  login  */
+/*  About  */
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin: 20px auto;
+  width: 70%;
+  justify-content: center;
+  height: auto;
+  background-image: url("./images/moscow.jpg");
+}
+
+.about-section p {
+  margin: 50px;
+}
