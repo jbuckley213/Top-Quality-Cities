@@ -1,8 +1,25 @@
 @import "reset.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 body {
   font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #2c303f;
 }
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+/*  navbar  */
 
 nav {
   display: flex;
@@ -14,25 +31,93 @@ nav img {
   width: 20%;
 }
 nav a {
-  margin: 5px;
+  margin: 15px;
+  text-decoration: none;
+  color: #5b5e6d;
 }
+
+nav ul {
+  display: flex;
+}
+
+/*  header  */
 
 header {
   display: flex;
-  justify-content: space-between;
-}
-header div {
-  height: 300px;
-  width: 300px;
-}
-header img {
-  height: 100%;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin: 0 auto;
+
+  justify-content: center;
+  height: auto;
 }
 
-section {
+header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  margin: 50px;
+}
+
+.title p {
+  margin: 50px 0;
+}
+.cover-img2 {
+  height: 20rem;
+  width: 25rem;
   display: flex;
 }
 
-section img {
-  width: 50%;
+/* section */
+
+.preselected-cities {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin: 20px auto;
+
+  justify-content: center;
+  height: auto;
 }
+
+.city-img img {
+  max-width: 100%;
+  /*height: auto;*/
+}
+
+.city-img {
+  height: 25rem;
+  width: 35rem;
+  margin: 0px auto;
+}
+
+.city-info {
+  margin-top: 30px;
+  height: 10rem;
+  width: 20rem;
+}
+
+.city h2 {
+  margin-bottom: 30px;
+}
+
+/*  signup */
+
+.signup {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup input {
+  margin: 20px auto;
+  width: 300px;
+}
+
+.signup button {
+  margin: 20px auto;
+}
+
+/*  login  */
