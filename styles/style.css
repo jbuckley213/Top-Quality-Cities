@@ -64,10 +64,16 @@ header img {
 .title p {
   margin: 50px 0;
 }
+
+.title a {
+  background-color: #222b37;
+
+  color: white;
+}
 .cover-img2 {
-  height: 20rem;
-  width: 25rem;
-  display: flex;
+  height: auto;
+  width: 35rem;
+  margin: 0px auto;
 }
 
 /* section */
@@ -88,19 +94,26 @@ header img {
 }
 
 .city-img {
-  height: 25rem;
+  height: auto;
   width: 35rem;
   margin: 0px auto;
 }
 
 .city-info {
-  margin-top: 30px;
+  margin: 15px 0;
   height: 10rem;
-  width: 20rem;
+  width: 25rem;
 }
 
-.city h2 {
-  margin-bottom: 30px;
+.city-info h2 {
+  margin-bottom: 1rem;
+}
+.city-info p {
+  margin-bottom: 0.8rem;
+}
+
+.city-info a {
+  color: rgb(121, 119, 247);
 }
 
 /*  signup */
@@ -109,7 +122,6 @@ header img {
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
-  margin: 20px auto;
 
   justify-content: center;
   height: auto;
@@ -136,13 +148,16 @@ header img {
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
-  margin: 20px auto;
-  width: 70%;
+  padding: 20px 0;
+  width: 100%;
   justify-content: center;
-  height: auto;
-  background-image: url("./images/moscow.jpg");
+  height: 400px;
+  background: center url("/images/moscow.jpg") no-repeat;
+  background-size: cover;
+  color: #f4f3f4;
 }
 
 .about-section p {
-  margin: 50px;
+  position: relative;
+  top: -110px;
 }
