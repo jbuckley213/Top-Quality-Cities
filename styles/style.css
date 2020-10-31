@@ -54,11 +54,13 @@ header {
 
 header img {
   max-width: 100%;
-  height: auto;
+  /*height: auto;*/
 }
 
 .title {
   margin: 50px;
+  height: 20rem;
+  width: 25rem;
 }
 
 .title p {
@@ -68,12 +70,82 @@ header img {
 .title a {
   background-color: #222b37;
 
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .cover-img2 {
-  height: auto;
-  width: 35rem;
+  height: 30rem;
+  width: 30rem;
   margin: 0px auto;
+  background: center url("/images/general-city.jpg");
+  background-size: cover;
+}
+
+.cover-img2 button {
+  color: rgb(255, 255, 255);
+  font-size: 0.7rem;
+  width: 10rem;
+  height: 1.7rem;
+  box-shadow: 1px 5px rgb(0, 0, 0, 0.1);
+}
+
+button span {
+  margin-right: 10px;
+}
+.btn-1 {
+  background-color: rgb(160, 105, 220);
+  position: relative;
+
+  top: 220px;
+  left: 100px;
+  animation: btn-slide1 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) infinite;
+}
+.btn-2 {
+  background-color: rgb(241, 158, 57);
+  position: relative;
+  top: 200px;
+  left: 135px;
+  animation: btn-slide2 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) 1s infinite;
+}
+.btn-3 {
+  background-color: rgb(56, 140, 221);
+  position: relative;
+  top: 230px;
+  left: 120px;
+  animation: btn-slide3 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) 0.5s infinite;
+}
+
+@keyframes btn-slide1 {
+  0% {
+    left: 100px;
+  }
+  50% {
+    left: 120px;
+  }
+  100% {
+    left: 100px;
+  }
+}
+@keyframes btn-slide2 {
+  0% {
+    left: 135px;
+  }
+  50% {
+    left: 150px;
+  }
+  100% {
+    left: 135px;
+  }
+}
+@keyframes btn-slide3 {
+  0% {
+    left: 120px;
+  }
+  50% {
+    left: 135px;
+  }
+  100% {
+    left: 120px;
+  }
 }
 
 /* section */
@@ -114,6 +186,26 @@ header img {
 
 .city-info a {
   color: rgb(121, 119, 247);
+}
+
+/*  Footer   */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(22, 27, 37);
+  color: rgb(255, 255, 255);
+  height: 7rem;
+}
+
+footer h4 {
+  font-size: 1.7rem;
+  color: rgb(158, 166, 174);
+  margin: 20px 0;
+}
+footer p {
+  text-align: center;
 }
 
 /*  signup */
