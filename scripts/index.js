@@ -23,10 +23,10 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
-window.addEventListener("scroll", debounce(scroll());
+window.addEventListener("scroll", debounce(scroll));
 
 function scroll(e) {
-    console.log(window.pageYOffset);
+  console.log(window.pageYOffset);
   if (window.innerWidth > 1040) {
     if (pageYOffset > 575 && pageYOffset < 750) {
       //650
