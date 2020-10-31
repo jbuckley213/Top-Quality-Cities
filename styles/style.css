@@ -38,6 +38,7 @@ nav a {
 
 nav ul {
   display: flex;
+  margin-left: 15rem;
 }
 
 /*  header  */
@@ -157,6 +158,7 @@ button span {
   margin: 20px auto;
 
   justify-content: center;
+  align-items: flex-start;
   height: auto;
 }
 
@@ -167,12 +169,12 @@ button span {
 
 .city-img {
   height: auto;
-  width: 35rem;
+  width: 40rem;
   margin: 0px auto;
 }
 
 .city-info {
-  margin: 15px 0;
+  margin: 50px 0;
   height: 10rem;
   width: 25rem;
 }
@@ -207,6 +209,7 @@ footer h4 {
 footer p {
   text-align: center;
 }
+/* //////////////////////////////*/
 
 /*  signup */
 
@@ -234,6 +237,17 @@ footer p {
   margin: 20px auto;
 }
 
+.signup-img {
+  display: flex;
+  flex-direction: row;
+}
+.signup-img img {
+  width: auto;
+  height: 25rem;
+  margin: 50px 0 0 50px;
+}
+/* //////////////////////////////*/
+
 /*  About  */
 
 .about-section {
@@ -247,9 +261,80 @@ footer p {
   background: center url("/images/moscow.jpg") no-repeat;
   background-size: cover;
   color: #f4f3f4;
+  animation: fadeIn 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.about-section p {
+.about-section h4 {
   position: relative;
   top: -110px;
+}
+#about-article p {
+  width: 30rem;
+  margin: 70px auto;
+}
+#about-article {
+  position: relative;
+}
+.inactive {
+  opacity: 0;
+}
+.active {
+  opacity: 1;
+  transition: all 1s;
+  animation: slide 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    left: -100px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+/* ///////////////*/
+/* Search page */
+
+.search-header {
+  background: center url("/images/travel-draw.jpg") no-repeat;
+  background-size: cover;
+  height: 20rem;
+}
+
+@media (min-width: 1024px) {
+  .stick {
+    /*position: -webkit-sticky;
+
+    position: sticky;
+    top: 80px;*/
+    width: 40rem;
+    height: auto;
+    position: fixed;
+    top: 60px;
+    left: 63px;
+  }
+
+  .inactive-img {
+    opacity: 0;
+  }
+
+  .city-info {
+    margin: 100px 0;
+  }
+
+  .preselected-cities {
+    margin: 80px 0;
+  }
 }
