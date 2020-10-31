@@ -156,7 +156,6 @@ button span {
   flex-direction: column;
   flex-flow: row wrap;
   margin: 20px auto;
-
   justify-content: center;
   align-items: flex-start;
   height: auto;
@@ -170,7 +169,6 @@ button span {
 .city-img {
   height: auto;
   width: 40rem;
-  margin: 0px auto;
 }
 
 .city-info {
@@ -188,6 +186,32 @@ button span {
 
 .city-info a {
   color: rgb(121, 119, 247);
+}
+
+.test-barca {
+  background: center url("../images/barcelona.jpg") no-repeat;
+  background-size: cover;
+  margin: 0;
+  width: 35rem;
+  height: 30rem;
+}
+.test-dublin {
+  background: center url("../images/dublin.jpg") no-repeat;
+  background-size: cover;
+  margin: 0;
+  width: 35rem;
+  height: 30rem;
+  transition: all 1s;
+  animation: change 0.2s;
+}
+.test-vancouver {
+  background: center url("../images/vancouver.jpg") no-repeat;
+  background-size: cover;
+  margin: 0;
+  width: 35rem;
+  height: 30rem;
+  transition: all 1s;
+  animation: change 0.2s;
 }
 
 /*  Footer   */
@@ -304,6 +328,18 @@ footer p {
   }
 }
 
+@keyframes change {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ///////////////*/
 /* Search page */
 
@@ -319,11 +355,10 @@ footer p {
 
     position: sticky;
     top: 80px;*/
-    width: 40rem;
-    height: auto;
+
     position: fixed;
-    top: 60px;
-    left: 63px;
+    top: 100px; /* 20px with 650 */
+    left: 0px;
   }
 
   .inactive-img {
@@ -336,5 +371,10 @@ footer p {
 
   .preselected-cities {
     margin: 80px 0;
+    justify-content: space-between;
+  }
+
+  .img-change {
+    animation: change 1s 1;
   }
 }
