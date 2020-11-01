@@ -14,6 +14,9 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+h3 {
+  font-size: 1.8rem;
+}
 
 p {
   font-size: 1.3rem;
@@ -21,24 +24,35 @@ p {
 
 /*  navbar  */
 
-nav {
+#nav-id {
   display: flex;
+  flex-wrap: row;
   justify-content: space-between;
   align-items: center;
 }
 
-nav img {
-  width: 20%;
+#nav-id img {
+  width: 30%;
 }
-nav a {
+#nav-id a {
   margin: 15px;
   text-decoration: none;
   color: #5b5e6d;
 }
 
-nav ul {
+#nav-id ul {
   display: flex;
   margin-left: 15rem;
+}
+#logo {
+  width: 20rem;
+}
+#dropdown {
+  display: flex;
+}
+
+#nav-margin {
+  margin: 0;
 }
 
 /*  header  */
@@ -253,7 +267,7 @@ footer p {
 }
 
 .signup input {
-  margin: 20px auto;
+  margin: 20px 0;
   width: 300px;
 }
 
@@ -270,6 +284,17 @@ footer p {
   height: 25rem;
   margin: 50px 0 0 50px;
 }
+
+::placeholder {
+  text-align: center;
+}
+
+/*.signup-section input {
+  border: none;
+  border-bottom: solid 0.1px black;
+  text-align: center;
+}*/
+
 /* //////////////////////////////*/
 
 /*  About  */
@@ -349,6 +374,19 @@ footer p {
   height: 20rem;
 }
 
+#results {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#results li {
+  margin: 10px 0;
+}
+#results span {
+  background-color: rgb(121, 119, 247);
+
+  text-align: center;
+}
 @media (min-width: 1024px) {
   .stick {
     /*position: -webkit-sticky;
