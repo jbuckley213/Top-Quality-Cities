@@ -48,28 +48,64 @@ window.addEventListener("scroll", (e) => {
   }
 });
 
-// const mainPageBtns = document.querySelectorAll(".main-page-city");
+callApi("dublin");
 
-// mainPageBtns.forEach((el) => {
-//   el.addEventListener("click", function (e) {
-//     clearScreen();
-//     //console.log(tableBody);
-//     //results.innerHTML = "Hellp";
+function callApi(city, indexOne, indexTwo, indexThree, indexFour, div) {
+  fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      displayData(data, indexOne, indexTwo, indexThree, indexFour, div);
+    });
+  // .catch((reject) => {
+  //   printError();
+  //   return reject;
+  // });
+}
 
-//     event.preventDefault();
-//     const userInputCity = getUserInput();
-//     fetch(
-//       `https://api.teleport.org/api/urban_areas/slug:${userInputCity}/scores/`
-//     )
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         showData(data, inputBtn.value);
-//       })
-//       .catch((reject) => {
-//         printError();
-//         return reject;
-//       });
-//   });
-// });
+const displayDivDublin = document.querySelector("#display-dublin");
+const displayDivBarca = document.querySelector("#display-barca");
+const displayDivVancouver = document.querySelector("#display-vancouver");
+
+function displayData(data, indexOne, indexTwo, indexThree, indexFour, div) {
+  const divOne = createBarDiv(indexOne, data);
+  const divTwo = createBarDiv(indexTwo, data);
+  const divThree = createBarDiv(indexThree, data);
+  const divFour = createBarDiv(indexFour, data);
+
+  div.appendChild(divOne);
+  div.appendChild(divTwo);
+  div.appendChild(divThree);
+  div.appendChild(divFour);
+}
+
+function createBarDiv(index, data) {
+  const barDiv = document.createElement("div");
+  const spanName = document.createElement("span");
+  const spanValue = document.createElement("span");
+  const divOne = document.createElement("div");
+
+  divOne.classList = "homepage-bar-div";
+
+  const nameOne = data.categories[index].name;
+  const scoreOne = data.categories[index].score_out_of_10;
+  const elementScore = (Math.round(scoreOne * 100) / 100).toFixed(2);
+
+  barDiv.style.width = `${2 * elementScore}rem`;
+  barDiv.style.backgroundColor = data.categories[index].color;
+  barDiv.classList = "home-bar-chart";
+
+  spanName.innerHTML = nameOne;
+  spanValue.innerHTML = elementScore;
+  spanName.style.width = "5rem";
+
+  divOne.appendChild(spanName);
+  divOne.appendChild(barDiv);
+  divOne.appendChild(spanValue);
+  return divOne;
+}
+
+callApi("dublin", 3, 6, 7, 1, displayDivDublin);
+callApi("barcelona", 5, 9, 2, 14, displayDivBarca);
+callApi("vancouver", 8, 1, 4, 10, displayDivVancouver);

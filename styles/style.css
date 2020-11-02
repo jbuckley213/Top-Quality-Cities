@@ -205,7 +205,7 @@ button span {
 
 .city-info {
   margin-top: 1rem;
-  height: 10rem;
+  height: 20rem;
   width: 25rem;
 }
 
@@ -218,6 +218,36 @@ button span {
 
 .city-info a {
   color: rgb(121, 119, 247);
+  margin: 0;
+}
+
+#display-dublin {
+  display: flex;
+  flex-direction: column;
+}
+#display-barca {
+  display: flex;
+  flex-direction: column;
+}
+
+#display-vancouver {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-bar-div {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.home-bar-chart {
+  border-radius: 10px;
+
+  height: 20px;
+  margin: 0 2rem;
+  text-align: center;
+  color: white;
 }
 
 /*  Footer   */
@@ -469,5 +499,10 @@ td p {
 
   #navbarSupportedContent1 {
     margin-left: 30rem;
+  }
+
+  .city-info {
+    margin-top: 0rem;
+    margin-right: 1rem;
   }
 }
