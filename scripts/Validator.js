@@ -11,7 +11,6 @@ class Validator {
       invalidEmailError: this.invalidEmailError,
       passwordError: this.passwordError,
       repeatPasswordError: this.repeatPasswordError,
-      emailExistsError: this.emailExistsError,
     };
   }
 
@@ -24,7 +23,19 @@ class Validator {
   };
 
   validatePassword = (password) => {
-    validateRepeatPassword = (password, repeatPassword) => {};
+    if (password.length >= 6) {
+      delete this.errors.passwordError;
+    } else {
+      this.errors.passwordError = this.passwordError;
+    }
+  };
+
+  validateRepeatPassword = (password, repeatPassword) => {
+    if (password === repeatPassword) {
+      delete this.errors.repeatPasswordError;
+    } else {
+      this.errors.repeatPasswordError = this.repeatPasswordError;
+    }
   };
 
   emailSyntaxIsValid = (email) => {
@@ -44,9 +55,17 @@ class Validator {
         emailUnique = false;
       }
     });
+
+    if (emailUnique) {
+      delete this.errors.emailExistsError;
+    } else {
+      this.errors.emailExistsError = this.emailExistsError;
+    }
   };
 
-  getErrors = () => {};
+  getErrors = () => {
+    return this.errors;
+  };
 }
 
 const validator = new Validator();

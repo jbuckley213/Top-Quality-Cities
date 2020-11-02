@@ -32,7 +32,7 @@ p {
 }
 
 #nav-id img {
-  width: 30%;
+  width: 20%;
 }
 #nav-id a {
   margin: 15px;
@@ -42,7 +42,6 @@ p {
 
 #nav-id ul {
   display: flex;
-  margin-left: 15rem;
 }
 #logo {
   width: 20rem;
@@ -53,6 +52,10 @@ p {
 
 #nav-margin {
   margin: 0;
+}
+
+#navbarSupportedContent1 {
+  margin-left: 25rem;
 }
 
 /*  header  */
@@ -82,11 +85,6 @@ header img {
   margin: 50px 0;
 }
 
-.title a {
-  background-color: #222b37;
-
-  color: rgb(255, 255, 255);
-}
 .cover-img2 {
   height: 30rem;
   width: 30rem;
@@ -103,6 +101,15 @@ header img {
   box-shadow: 1px 5px rgb(0, 0, 0, 0.1);
 }
 
+.style-btn {
+  background-color: #222b37;
+
+  color: rgb(255, 255, 255);
+}
+.style-btn:hover {
+  color: rgb(121, 119, 247);
+}
+
 button span {
   margin-right: 10px;
 }
@@ -110,56 +117,56 @@ button span {
   background-color: rgb(160, 105, 220);
   position: relative;
 
-  top: 220px;
-  left: 100px;
+  top: 13rem;
+  left: 8rem;
   animation: btn-slide1 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) infinite;
 }
 .btn-2 {
   background-color: rgb(241, 158, 57);
   position: relative;
-  top: 200px;
-  left: 135px;
+  top: 15rem;
+  left: 1rem;
   animation: btn-slide2 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) 1s infinite;
 }
 .btn-3 {
   background-color: rgb(56, 140, 221);
   position: relative;
-  top: 230px;
-  left: 120px;
+  top: 14.5rem;
+  left: 5rem;
   animation: btn-slide3 10s cubic-bezier(0.175, 0.67, 0.83, 0.67) 0.5s infinite;
 }
 
 @keyframes btn-slide1 {
   0% {
-    left: 100px;
+    left: 8rem;
   }
   50% {
-    left: 120px;
+    left: 9rem;
   }
   100% {
-    left: 100px;
+    left: 8rem;
   }
 }
 @keyframes btn-slide2 {
   0% {
-    left: 135px;
+    left: 1rem;
   }
   50% {
-    left: 150px;
+    left: 2rem;
   }
   100% {
-    left: 135px;
+    left: 1rem;
   }
 }
 @keyframes btn-slide3 {
   0% {
-    left: 120px;
+    left: 5rem;
   }
   50% {
-    left: 135px;
+    left: 6rem;
   }
   100% {
-    left: 120px;
+    left: 5rem;
   }
 }
 
@@ -169,15 +176,16 @@ button span {
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
-  margin: 20px auto;
+  margin: 20px 0;
   justify-content: center;
-  align-items: flex-start;
   height: auto;
 }
 
 .city-img img {
   max-width: 100%;
   /*height: auto;*/
+  position: relative;
+  top: 0;
 }
 
 .city-img {
@@ -185,8 +193,14 @@ button span {
   width: 40rem;
 }
 
+.slideIn {
+  animation: slide 1s ease-in 0s;
+  position: relative;
+  top: 0;
+}
+
 .city-info {
-  margin: 50px 0;
+  margin-top: 1rem;
   height: 10rem;
   width: 25rem;
 }
@@ -200,32 +214,6 @@ button span {
 
 .city-info a {
   color: rgb(121, 119, 247);
-}
-
-.test-barca {
-  background: center url("../images/barcelona.jpg") no-repeat;
-  background-size: cover;
-  margin: 0;
-  width: 35rem;
-  height: 30rem;
-}
-.test-dublin {
-  background: center url("../images/dublin.jpg") no-repeat;
-  background-size: cover;
-  margin: 0;
-  width: 35rem;
-  height: 30rem;
-  transition: all 1s;
-  animation: change 0.2s;
-}
-.test-vancouver {
-  background: center url("../images/vancouver.jpg") no-repeat;
-  background-size: cover;
-  margin: 0;
-  width: 35rem;
-  height: 30rem;
-  transition: all 1s;
-  animation: change 0.2s;
 }
 
 /*  Footer   */
@@ -282,7 +270,12 @@ footer p {
 .signup-img img {
   width: auto;
   height: 25rem;
-  margin: 50px 0 0 50px;
+  margin: 50px 0 0 0;
+}
+.login-img img {
+  width: auto;
+  height: 25rem;
+  margin: 50px 0 0 0;
 }
 
 ::placeholder {
@@ -318,7 +311,8 @@ footer p {
   top: -110px;
 }
 #about-article p {
-  width: 30rem;
+  line-height: 1.8;
+  width: 70%;
   margin: 70px auto;
 }
 #about-article {
@@ -353,18 +347,6 @@ footer p {
   }
 }
 
-@keyframes change {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* ///////////////*/
 /* Search page */
 
@@ -375,30 +357,52 @@ footer p {
 }
 
 #results {
+  margin: 0 auto;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
-#results li {
-  margin: 10px 0;
+
+#results h3 {
+  margin: 20px 0;
 }
-#results span {
+#results div {
+  padding-bottom: 20px;
+}
+
+#house-bar {
+  border-radius: 10px;
+  height: 20px;
   background-color: rgb(121, 119, 247);
-
+  width: 100px;
   text-align: center;
+  color: white;
 }
+
+#startup-bar {
+  border-radius: 10px;
+
+  height: 20px;
+  background-color: rgb(56, 140, 221);
+  width: 140px;
+  text-align: center;
+  color: white;
+}
+#education-bar {
+  border-radius: 10px;
+
+  height: 20px;
+  text-align: center;
+  background-color: rgb(241, 158, 57);
+  width: 120px;
+  color: white;
+}
+td p {
+  font-size: 1rem;
+}
+
 @media (min-width: 1024px) {
-  .stick {
-    /*position: -webkit-sticky;
-
-    position: sticky;
-    top: 80px;*/
-
-    position: fixed;
-    top: 100px; /* 20px with 650 */
-    left: 0px;
-  }
-
   .inactive-img {
     opacity: 0;
   }
@@ -410,9 +414,5 @@ footer p {
   .preselected-cities {
     margin: 80px 0;
     justify-content: space-between;
-  }
-
-  .img-change {
-    animation: change 1s 1;
   }
 }
