@@ -74,18 +74,36 @@
         <form class="signup">
           <label for="city">City: </label>
           <input type="text" id="city" name="city" />
-          <button class="btn btn-outline-secondary" type="submit" value="Submit">
+          <button id="search-btn" class="btn btn-outline-secondary" type="submit" value="Submit">
             Search
           </button>
         </section>
 
+        <section id="test-results" class="inactive">
+          <h3 id="city-title"></h3>
+          <div id="description"></div>
+          <table id="results-table" class="table table-borderless table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Attribute</th>
+                <th scope="col" class="wider">Bar</th>
+                <th scope="col">Value</th>
+    
+              </tr>
+          </thead>
+              <tbody id="table-body">
+             
+              </tbody>
+          </table>
+        </section>
+        <!--
     <section id="results">
       <div>
         <h3>Dublin</h3>
       <p>Information about Dublin</p>
       </div>
       
-      <table class="table table-borderless table-hover">
+      <table  class="table table-borderless table-hover">
         <thead>
           <tr>
             <th scope="col">Attribute</th>
@@ -128,7 +146,7 @@
         </tbody>
       </table>
     </section>
-
+-->
     <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -139,6 +157,6 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"
   ></script>
-    <script src="scripts/about.js"></script>
+    <script src="scripts/api.js"></script>
   </body>
 </html>

@@ -44,7 +44,7 @@ p {
   display: flex;
 }
 #logo {
-  width: 20rem;
+  width: 15rem;
 }
 #dropdown {
   display: flex;
@@ -55,7 +55,11 @@ p {
 }
 
 #navbarSupportedContent1 {
-  margin-left: 25rem;
+  margin-left: 15rem;
+}
+
+.search-button {
+  margin-bottom: 10px;
 }
 
 /*  header  */
@@ -88,7 +92,7 @@ header img {
 .cover-img2 {
   height: 30rem;
   width: 30rem;
-  margin: 0px auto;
+  margin: 5rem auto 0 auto;
   background: center url("/images/general-city.jpg");
   background-size: cover;
 }
@@ -264,18 +268,30 @@ footer p {
 }
 
 .signup-img {
+  height: auto;
+  width: 40rem;
   display: flex;
   flex-direction: row;
 }
 .signup-img img {
-  width: auto;
-  height: 25rem;
+  max-width: 100%;
   margin: 50px 0 0 0;
 }
+
+/* /////////////////*/
+/* login */
+
+.login-title {
+  margin-bottom: 3rem;
+}
+
+.login-img {
+  height: auto;
+  width: 40rem;
+}
+
 .login-img img {
-  width: auto;
-  height: 25rem;
-  margin: 50px 0 0 0;
+  max-width: 100%;
 }
 
 ::placeholder {
@@ -371,6 +387,20 @@ footer p {
   padding-bottom: 20px;
 }
 
+#test-results {
+  /* Copy of Results */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+#test-results div {
+  width: 100%;
+  line-height: 1.8;
+}
+
 #house-bar {
   border-radius: 10px;
   height: 20px;
@@ -402,6 +432,24 @@ td p {
   font-size: 1rem;
 }
 
+.bar-chart {
+  border-radius: 10px;
+
+  height: 20px;
+  background-color: rgb(56, 140, 221);
+  width: 10px;
+  text-align: center;
+  color: white;
+}
+
+.wider {
+  width: 20rem;
+}
+
+#description {
+  margin: 3rem auto;
+}
+
 @media (min-width: 1024px) {
   .inactive-img {
     opacity: 0;
@@ -410,9 +458,16 @@ td p {
   .city-info {
     margin: 100px 0;
   }
+  .cover-img2 {
+    margin: 0 auto;
+  }
 
   .preselected-cities {
     margin: 80px 0;
     justify-content: space-between;
+  }
+
+  #navbarSupportedContent1 {
+    margin-left: 30rem;
   }
 }

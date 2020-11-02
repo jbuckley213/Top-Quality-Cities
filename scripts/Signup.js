@@ -20,7 +20,7 @@ class Signup {
     validator.validateUniqueEmail(email);
 
     //const errors = validator.getErrors();
-    console.log("validator", validator.errors);
+    this.setErrorMessages();
   };
 
   //
@@ -49,7 +49,17 @@ class Signup {
   };
 
   setErrorMessages = () => {
-    const errors = validator.getErrors();
+    this.errorsWrapper.innerHTML = "";
+
+    const errorsObj = validator.getErrors();
+    const errorStringArr = Object.values(errorsObj);
+
+    errorStringArr.forEach((str) => {
+      const div = document.createElement("div");
+      div.textContent = str;
+      div.classList = "alert alert-danger";
+      this.errorsWrapper.appendChild(div);
+    });
   };
 
   saveData = (event) => {
