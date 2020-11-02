@@ -17,7 +17,7 @@ function getUserInput() {
 
 searchBtn.addEventListener("click", function (event) {
   console.log("Clicked");
-  //clearScreen();
+  clearScreen();
   //console.log(tableBody);
   //results.innerHTML = "Hellp";
 
