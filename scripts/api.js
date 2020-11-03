@@ -89,10 +89,13 @@ function addToTable(categories) {
       2
     );
 
-    barDiv.style.width = `${2 * elementScore}rem`;
+    barDiv.style.width = `${1 * elementScore}%`;
+
+    //barDiv.style.width = `${2 * elementScore}rem`;
     barDiv.style.backgroundColor = el.color;
     barDiv.classList = "bar-chart";
     rowElementName.innerHTML = el.name;
+    rowElementName.classList = "name-width";
 
     rowElementBar.appendChild(barDiv);
     rowElementValue.innerHTML = elementScore;
