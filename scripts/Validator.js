@@ -17,6 +17,7 @@ class Validator {
   validateEmail = (email) => {
     if (this.emailSyntaxIsValid(email)) {
       delete this.errors.invalidEmailError;
+      //this.errors.passwordError = "";
     } else {
       this.errors.invalidEmailError = this.invalidEmailError;
     }
@@ -25,6 +26,7 @@ class Validator {
   validatePassword = (password) => {
     if (password.length >= 6) {
       delete this.errors.passwordError;
+      //this.errors.passwordError = "";
     } else {
       this.errors.passwordError = this.passwordError;
     }
@@ -33,6 +35,7 @@ class Validator {
   validateRepeatPassword = (password, repeatPassword) => {
     if (password === repeatPassword) {
       delete this.errors.repeatPasswordError;
+      //this.errors.repeatPasswordError = "";
     } else {
       this.errors.repeatPasswordError = this.repeatPasswordError;
     }
@@ -58,6 +61,7 @@ class Validator {
 
     if (emailUnique) {
       delete this.errors.emailExistsError;
+      //this.errors.emailExistsError = "";
     } else {
       this.errors.emailExistsError = this.emailExistsError;
     }

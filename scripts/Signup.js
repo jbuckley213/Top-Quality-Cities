@@ -9,6 +9,11 @@ class Signup {
     this.repeatPasswordInput = document.querySelector("#password2");
     this.buttonInput = document.querySelector("#signup-btn");
     this.errorsWrapper = document.querySelector(".message-container");
+    this.emailMessage = document.querySelector("#email-error");
+    this.passwordMessage = document.querySelector("#password-error");
+    this.repeatPasswordMessage = document.querySelector(
+      "#repeat-password-error"
+    );
   }
 
   // handleEmail
@@ -33,19 +38,21 @@ class Signup {
 
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-    console.log("validator", validator.errors);
+
+    this.setErrorMessages();
   };
 
   handleRepeatPasswordInput = () => {
-    const passwordInput = event.target;
-    const repeatPasswordInput = this.repeatPasswordInput;
+    const passwordInput = this.passwordInput;
+    const repeatPasswordInput = event.target;
 
     const password = passwordInput.value;
     const repeatPassword = repeatPasswordInput.value;
 
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-    console.log("validator", validator.errors);
+
+    this.setErrorMessages();
   };
 
   setErrorMessages = () => {
@@ -53,13 +60,66 @@ class Signup {
 
     const errorsObj = validator.getErrors();
     const errorStringArr = Object.values(errorsObj);
+    console.log(errorStringArr);
+
+    // const validEmailStr = errorStringArr[0];
+    // const passwordLengthStr = errorStringArr[1];
+    // const repeatPasswordStr = errorStringArr[2];
+    // const emailTakenStr = errorStringArr[3];
+
+    // this.emailMessage.innerHTML = "";
+    // this.passwordMessage.innerHTML = "";
+    // this.repeatPasswordMessage.innerHTML = "";
+    // if(validEmailStr)
+    // const p = document.createElement("p");
+    // p.classList = "alert alert-danger error-message";
+    // p.textContent = str;
+    // this.emailMessage.appendChild(p);
 
     errorStringArr.forEach((str) => {
-      const div = document.createElement("div");
-      div.textContent = str;
-      div.classList = "alert alert-danger";
-      this.errorsWrapper.appendChild(div);
+      this.emailMessage.innerHTML = "";
+      this.passwordMessage.innerHTML = "";
+      this.repeatPasswordMessage.innerHTML = "";
+
+      if (str.includes("already taken")) {
+        const p = document.createElement("p");
+        p.classList = "alert alert-danger error-message";
+
+        p.textContent = str;
+        this.emailMessage.appendChild(p);
+      }
+      if (str.includes("vaild email")) {
+        const p = document.createElement("p");
+        p.classList = "alert alert-danger error-message";
+
+        p.textContent = str;
+        this.emailMessage.appendChild(p);
+      }
+      if (str.includes("long")) {
+        console.log("error");
+        const p = document.createElement("p");
+        p.classList = "alert alert-danger error-message";
+
+        p.textContent = str;
+        this.passwordMessage.appendChild(p);
+      }
+      if (str.includes("repeat password")) {
+        console.log("Repeat error");
+
+        const p = document.createElement("p");
+        p.classList = "alert alert-danger error-message";
+
+        p.textContent = str;
+        this.repeatPasswordMessage.appendChild(p);
+      }
     });
+
+    // errorStringArr.forEach((str) => {
+    //   const p = document.createElement("p");
+    //   p.textContent = str;
+    //   p.classList = "alert alert-danger";
+    //   this.errorsWrapper.appendChild(p);
+    // });
   };
 
   saveData = (event) => {

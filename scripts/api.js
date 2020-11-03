@@ -15,6 +15,28 @@ function getUserInput() {
   return userInputCleaned;
 }
 
+//////////////////////////////////
+//Get Value from URL
+//////////////////////////////////
+
+const url = new URL(document.URL);
+
+if (url.searchParams.has("city")) {
+  const city = url.searchParams.get("city");
+  fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      showData(data, upperCaseWords(city));
+    });
+}
+
+/////////////////////////////////////
+//Get Value from search input
+//////////////////////////////////
+
 searchBtn.addEventListener("click", function (event) {
   console.log("Clicked");
   clearScreen();
@@ -31,7 +53,7 @@ searchBtn.addEventListener("click", function (event) {
     })
     .then((data) => {
       console.log(data);
-      showData(data, inputBtn.value);
+      showData(data, upperCaseWords(inputBtn.value));
     });
   // .catch((reject) => {
   //   printError();
@@ -42,8 +64,6 @@ searchBtn.addEventListener("click", function (event) {
 function showData(data, userInput) {
   results.classList = "active";
 
-  //   const cityName = document.createElement("h3");
-  //   cityTitle.classList = "remove";
   const cityScore = (Math.round(data.teleport_city_score * 100) / 100).toFixed(
     2
   );
@@ -51,9 +71,6 @@ function showData(data, userInput) {
   cityTitle.innerHTML = userInput + ": " + cityScore;
 
   results.insertBefore(cityTitle, resultsTable);
-
-  //   const div = document.createElement("div");
-  //   description.classList = "remove";
 
   description.innerHTML = data.summary;
   results.insertBefore(description, resultsTable);
@@ -125,3 +142,16 @@ function clearScreen() {
 //       });
 //   });
 // });
+
+function upperCaseWords(str) {
+  const arr = str.split(" ");
+  if (arr.length > 1) {
+    const newArr = arr.map((el) => {
+      return el[0].toUpperCase() + el.slice(1);
+    });
+
+    return newArr.join(" ");
+  } else {
+    return str[0].toUpperCase() + str.slice(1);
+  }
+}

@@ -62,12 +62,18 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" />
         <label for="password">Password: </label>
-        <input type="password" id="password1" name="password1" />
-        <button class="btn btn-outline-secondary" type="submit" value="Login">
+        <input type="password" id="password" name="password" />
+        <button
+          id="login-button"
+          class="btn btn-outline-secondary"
+          type="submit"
+          value="Login"
+        >
           Login
         </button>
         <p>Don't have an account? <a href="signup.html">Signup here</a></p>
       </form>
+      <div class="message-container"></div>
     </section>
 
     <script
@@ -80,5 +86,7 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <script src="/scripts/Login.js"></script>
+    <script src="/scripts/Database.js"></script>
   </body>
 </html>

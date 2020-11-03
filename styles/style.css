@@ -204,9 +204,9 @@ button span {
 }
 
 .city-info {
-  margin-top: 1rem;
-  height: 20rem;
-  width: 25rem;
+  margin: 1rem 1rem;
+  height: auto;
+  width: 19rem;
 }
 
 .city-info h2 {
@@ -214,6 +214,7 @@ button span {
 }
 .city-info p {
   margin-bottom: 0.8rem;
+  line-height: 1.8rem;
 }
 
 .city-info a {
@@ -224,21 +225,27 @@ button span {
 #display-dublin {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 0;
 }
 #display-barca {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 0;
 }
 
 #display-vancouver {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 0;
 }
 
 .homepage-bar-div {
   display: flex;
   flex-direction: row;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
 }
 
 .home-bar-chart {
@@ -298,14 +305,21 @@ footer p {
 }
 
 .signup-img {
-  height: auto;
+  height: 28rem;
   width: 40rem;
   display: flex;
   flex-direction: row;
+  /*background: center url("../images/skyline.jpg") no-repeat;
+  background-size: cover;*/
 }
 .signup-img img {
   max-width: 100%;
   margin: 50px 0 0 0;
+}
+
+.error-message {
+  width: 300px;
+  font-size: 0.8rem;
 }
 
 /* /////////////////*/
@@ -326,6 +340,11 @@ footer p {
 
 ::placeholder {
   text-align: center;
+}
+
+.correct-message {
+  background-color: rgb(47, 164, 93);
+  box-shadow: 0 0 10px #dbf1c1;
 }
 
 /*.signup-section input {
@@ -426,6 +445,10 @@ footer p {
   width: 50%;
 }
 
+#results-table {
+  width: 10%;
+}
+
 #test-results div {
   width: 100%;
   line-height: 1.8;
@@ -473,7 +496,7 @@ td p {
 }
 
 .wider {
-  width: 20rem;
+  width: 10%;
 }
 
 #description {
@@ -502,7 +525,16 @@ td p {
   }
 
   .city-info {
-    margin-top: 0rem;
-    margin-right: 1rem;
+    margin: 0 auto;
+  }
+  .about-section {
+    /* same as normal */
+    height: 400px;
+  }
+
+  .stick {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 }

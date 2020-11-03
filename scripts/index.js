@@ -7,6 +7,10 @@ const barcaImg = document.querySelector("#barca-img");
 const dublinImg = document.querySelector("#dublin-img");
 const vancouverImg = document.querySelector("#vancouver-img");
 
+const displayDivDublin = document.querySelector("#display-dublin");
+const displayDivBarca = document.querySelector("#display-barca");
+const displayDivVancouver = document.querySelector("#display-vancouver");
+
 function debounce(func, wait = 20, immediate = true) {
   var timeout;
   return function () {
@@ -36,15 +40,25 @@ function debounce(func, wait = 20, immediate = true) {
 //   }
 // }
 
+let sticky = barcaImg.offsetTop;
 window.addEventListener("scroll", (e) => {
+  // if (window.pageYOffset >= sticky) {
+  //   displayDivBarca.classList.add("stick");
+  // } else {
+  //   displayDivBarca.classList.remove("stick");
+  // }
+
   if (pageYOffset > 300) {
     barcaImg.classList = "active";
+    displayDivBarca.classList = "active";
   }
   if (pageYOffset > 780) {
     dublinImg.classList = "active";
+    displayDivDublin.classList = "active";
   }
   if (pageYOffset > 1300) {
     vancouverImg.classList = "active";
+    displayDivVancouver.classList = "active";
   }
 });
 
@@ -63,10 +77,6 @@ function callApi(city, indexOne, indexTwo, indexThree, indexFour, div) {
   //   return reject;
   // });
 }
-
-const displayDivDublin = document.querySelector("#display-dublin");
-const displayDivBarca = document.querySelector("#display-barca");
-const displayDivVancouver = document.querySelector("#display-vancouver");
 
 function displayData(data, indexOne, indexTwo, indexThree, indexFour, div) {
   const divOne = createBarDiv(indexOne, data);
