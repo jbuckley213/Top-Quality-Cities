@@ -87,23 +87,20 @@ class Signup {
 
         p.textContent = str;
         this.emailMessage.appendChild(p);
-      }
-      if (str.includes("vaild email")) {
+      } else if (str.includes("vaild email")) {
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
 
         p.textContent = str;
         this.emailMessage.appendChild(p);
-      }
-      if (str.includes("long")) {
+      } else if (str.includes("long")) {
         console.log("error");
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
 
         p.textContent = str;
         this.passwordMessage.appendChild(p);
-      }
-      if (str.includes("repeat password")) {
+      } else if (str.includes("repeat")) {
         console.log("Repeat error");
 
         const p = document.createElement("p");

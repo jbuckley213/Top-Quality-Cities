@@ -4,16 +4,22 @@ const searchBtn = document.querySelector("#search-btn");
 const results = document.querySelector("#test-results");
 const resultsTable = document.querySelector("#results-table");
 const tableBody = document.querySelector("#table-body");
-const inputBtn = document.querySelector("#city");
+const inputSearch = document.querySelector("#city");
 const description = document.querySelector("#description");
 const cityTitle = document.querySelector("#city-title");
 
 function getUserInput() {
-  const userInput = inputBtn.value;
+  const userInput = inputSearch.value;
   const userInputCleaned = userInput.toLowerCase().split(" ").join("-");
 
   return userInputCleaned;
 }
+
+/////////////////////////////////
+// Auto complete search
+////////////////////////////////
+
+//inputSearch.addEventListener();
 
 //////////////////////////////////
 //Get Value from URL
@@ -53,7 +59,7 @@ searchBtn.addEventListener("click", function (event) {
     })
     .then((data) => {
       console.log(data);
-      showData(data, upperCaseWords(inputBtn.value));
+      showData(data, upperCaseWords(inputSearch.value));
     });
   // .catch((reject) => {
   //   printError();
@@ -89,8 +95,11 @@ function addToTable(categories) {
       2
     );
 
-    barDiv.style.width = `${1 * elementScore}%`;
-
+    if (window.innerWidth > 767) {
+      barDiv.style.width = `${2 * elementScore}rem`;
+    } else {
+      barDiv.style.width = `${0.9 * elementScore}rem`;
+    }
     //barDiv.style.width = `${2 * elementScore}rem`;
     barDiv.style.backgroundColor = el.color;
     barDiv.classList = "bar-chart";
@@ -99,6 +108,7 @@ function addToTable(categories) {
 
     rowElementBar.appendChild(barDiv);
     rowElementValue.innerHTML = elementScore;
+    rowElementValue.style.width = "2rem";
 
     row.appendChild(rowElementName);
     row.appendChild(rowElementBar);

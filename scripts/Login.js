@@ -28,9 +28,16 @@ class Login {
       p.textContent = "Email or password are incorrect";
     } else {
       p.textContent = `Hello ${user.name}!`;
-      p.classList.add("correct-message");
+      p.classList = "correct-message alert alert-success";
     }
     this.messageContainer.appendChild(p);
+    this.redirect();
+  };
+
+  redirect = () => {
+    setTimeout(function () {
+      location.assign("index.html");
+    }, 3000);
   };
 }
 

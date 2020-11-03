@@ -345,6 +345,7 @@ footer p {
 .correct-message {
   background-color: rgb(47, 164, 93);
   box-shadow: 0 0 10px #dbf1c1;
+  margin-top: 3rem;
 }
 
 /*.signup-section input {
@@ -543,4 +544,7 @@ td p {
   .name-width {
     width: 10rem;
   }
+}
+
+@media (max-width: 720px) {
 }

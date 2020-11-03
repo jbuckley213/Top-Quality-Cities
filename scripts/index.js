@@ -78,6 +78,10 @@ function callApi(city, indexOne, indexTwo, indexThree, indexFour, div) {
   // });
 }
 
+function printError() {
+  console.log("There is a error");
+}
+
 function displayData(data, indexOne, indexTwo, indexThree, indexFour, div) {
   const divOne = createBarDiv(indexOne, data);
   const divTwo = createBarDiv(indexTwo, data);
@@ -97,7 +101,7 @@ function createBarDiv(index, data) {
   const divOne = document.createElement("div");
 
   divOne.classList = "homepage-bar-div";
-
+  console.log(data.categories[index].name);
   const nameOne = data.categories[index].name;
   const scoreOne = data.categories[index].score_out_of_10;
   const elementScore = (Math.round(scoreOne * 100) / 100).toFixed(2);
