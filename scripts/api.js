@@ -61,13 +61,6 @@ function autoComplete(data, value) {
     });
     autoCompleteDiv.append(btn);
   }
-
-  // dataArr.forEach(function (el) {
-  //   const p = document.createElement("p");
-  //   p.innerHTML = el["matching_full_name"];
-
-  //   autoCompleteDiv.append(p);
-  // });
 }
 
 /////////////////////////////////////
@@ -88,11 +81,11 @@ function autoSearchEventListen(value) {
     .then((data) => {
       console.log(data);
       showData(data, upperCaseWords(value));
+    })
+    .catch((reject) => {
+      printError();
+      return reject;
     });
-  // .catch((reject) => {
-  //   printError();
-  //   return reject;
-  // });
 }
 
 //////////////////////////////////
@@ -192,8 +185,10 @@ function addToTable(categories) {
 }
 
 function printError() {
+  clearScreen();
+  resultsTable.classList = "inactive";
   const alert = document.createElement("div");
-  alert.textContent = "We do not have the information on that city";
+  alert.textContent = "Sorry we do not have the information on that city";
   alert.classList = "alert alert-danger";
   results.appendChild(alert);
 }
