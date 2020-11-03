@@ -53,6 +53,7 @@ function autoComplete(data, value) {
     const autoCityArr = dataArr[i]["matching_full_name"].split(",");
     const autoCity = lowerCase(autoCityArr[0]);
     btn.classList = "btn btn-light";
+    btn.style.margin = "0px";
     btn.innerHTML = dataArr[i]["matching_full_name"];
     btn.addEventListener("click", function () {
       event.preventDefault();

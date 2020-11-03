@@ -428,6 +428,17 @@ footer p {
   align-items: center;
 }
 
+.signup input {
+  margin-bottom: 0;
+}
+
+.signup div {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  width: 18rem;
+}
+
 #results {
   margin: 0 auto;
   display: flex;
