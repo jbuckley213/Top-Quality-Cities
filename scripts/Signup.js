@@ -24,7 +24,6 @@ class Signup {
     validator.validateEmail(email);
     validator.validateUniqueEmail(email);
 
-    //const errors = validator.getErrors();
     this.setErrorMessages();
   };
 

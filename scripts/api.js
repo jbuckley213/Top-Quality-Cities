@@ -7,6 +7,7 @@ const tableBody = document.querySelector("#table-body");
 const inputSearch = document.querySelector("#city");
 const description = document.querySelector("#description");
 const cityTitle = document.querySelector("#city-title");
+const autoCompleteDiv = document.querySelector("#auto-complete");
 
 function getUserInput() {
   const userInput = inputSearch.value;
@@ -15,11 +16,83 @@ function getUserInput() {
   return userInputCleaned;
 }
 
+function lowerCase(str) {
+  const lowerCaseStr = str.toLowerCase().split(" ").join("-");
+  return lowerCaseStr;
+}
+
+function cleanInputAutoSearch(str) {
+  const cleanInput = str.toLowerCase().split(" ").join("%");
+  return cleanInput;
+}
+
 /////////////////////////////////
 // Auto complete search
 ////////////////////////////////
 
-//inputSearch.addEventListener();
+inputSearch.addEventListener("keyup", function (event) {
+  fetch(`https://api.teleport.org/api/cities/?search=${event.target.value}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      autoComplete(data, event.target.value);
+    });
+});
+
+///////////////////////
+// auto complete function
+
+function autoComplete(data, value) {
+  autoCompleteDiv.innerHTML = "";
+  const dataArr = data._embedded["city:search-results"];
+
+  for (let i = 0; i < 8; i++) {
+    const btn = document.createElement("button");
+    //console.log(dataArr[i]);
+    const autoCityArr = dataArr[i]["matching_full_name"].split(",");
+    const autoCity = lowerCase(autoCityArr[0]);
+    btn.classList = "btn btn-light";
+    btn.innerHTML = dataArr[i]["matching_full_name"];
+    btn.addEventListener("click", function () {
+      event.preventDefault();
+      autoSearchEventListen(autoCity);
+    });
+    autoCompleteDiv.append(btn);
+  }
+
+  // dataArr.forEach(function (el) {
+  //   const p = document.createElement("p");
+  //   p.innerHTML = el["matching_full_name"];
+
+  //   autoCompleteDiv.append(p);
+  // });
+}
+
+/////////////////////////////////////
+//Get Value from search input (auto complete)
+//////////////////////////////////
+
+function autoSearchEventListen(value) {
+  console.log("Clicked");
+  clearScreen();
+  inputSearch.value = "";
+  autoCompleteDiv.innerHTML = "";
+  //event.preventDefault();
+  //const userInputCity = getUserInput();
+  fetch(`https://api.teleport.org/api/urban_areas/slug:${value}/scores/`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      showData(data, upperCaseWords(value));
+    });
+  // .catch((reject) => {
+  //   printError();
+  //   return reject;
+  // });
+}
 
 //////////////////////////////////
 //Get Value from URL
@@ -39,9 +112,9 @@ if (url.searchParams.has("city")) {
     });
 }
 
-/////////////////////////////////////
-//Get Value from search input
 //////////////////////////////////
+// Normal Search Bar
+/////////////////////////////////
 
 searchBtn.addEventListener("click", function (event) {
   console.log("Clicked");
