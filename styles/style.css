@@ -296,12 +296,20 @@ footer p {
 }
 
 .signup input {
-  margin: 20px 0;
+  margin: 10px 0;
   width: 300px;
+}
+
+.signup label {
+  margin: 10px 0;
 }
 
 .signup button {
   margin: 20px auto;
+}
+
+.error-div {
+  height: 5-px;
 }
 
 .signup-img {
@@ -437,6 +445,14 @@ footer p {
   flex-direction: column;
   /*align-items: center;*/
   width: 18rem;
+}
+
+/*.error-div {
+  height: 50px;
+}*/
+
+.error-message {
+  margin-top: 10px;
 }
 
 #results {

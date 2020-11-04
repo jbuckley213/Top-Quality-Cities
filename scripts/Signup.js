@@ -59,7 +59,10 @@ class Signup {
 
     const errorsObj = validator.getErrors();
     const errorStringArr = Object.values(errorsObj);
-    console.log(errorStringArr);
+
+    this.emailMessage.innerHTML = "";
+    this.passwordMessage.innerHTML = "";
+    this.repeatPasswordMessage.innerHTML = "";
 
     // const validEmailStr = errorStringArr[0];
     // const passwordLengthStr = errorStringArr[1];
@@ -76,10 +79,6 @@ class Signup {
     // this.emailMessage.appendChild(p);
 
     errorStringArr.forEach((str) => {
-      this.emailMessage.innerHTML = "";
-      this.passwordMessage.innerHTML = "";
-      this.repeatPasswordMessage.innerHTML = "";
-
       if (str.includes("already taken")) {
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
@@ -93,15 +92,12 @@ class Signup {
         p.textContent = str;
         this.emailMessage.appendChild(p);
       } else if (str.includes("long")) {
-        console.log("error");
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
 
         p.textContent = str;
         this.passwordMessage.appendChild(p);
       } else if (str.includes("repeat")) {
-        console.log("Repeat error");
-
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
 
