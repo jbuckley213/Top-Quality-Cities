@@ -580,4 +580,19 @@ td p {
 }
 
 @media (max-width: 720px) {
+  #logo {
+    width: 10rem;
+  }
+  #navbarSupportedContent1 {
+    margin-left: 14rem;
+  }
+  .title {
+    height: 20rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  #test-results {
+    width: 18rem;
+  }
 }

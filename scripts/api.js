@@ -50,8 +50,9 @@ inputSearch.addEventListener("keyup", function (event) {
 function autoComplete(data, value) {
   autoCompleteDiv.innerHTML = "";
   const dataArr = data._embedded["city:search-results"];
+  const numberCitiesDisplay = 4;
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < numberCitiesDisplay; i++) {
     const btn = document.createElement("button");
     //console.log(dataArr[i]);
     const autoCityArr = dataArr[i]["matching_full_name"].split(",");
@@ -59,7 +60,7 @@ function autoComplete(data, value) {
     btn.classList = "btn btn-light";
     btn.style.margin = "0px";
     btn.innerHTML = dataArr[i]["matching_full_name"];
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (event) {
       event.preventDefault();
       autoSearchEventListen(autoCity);
     });
@@ -140,6 +141,7 @@ searchBtn.addEventListener("click", function (event) {
 
 function showData(data, userInput) {
   results.classList = "active";
+  resultsTable.classList.remove("inactive");
 
   const cityScore = (Math.round(data.teleport_city_score * 100) / 100).toFixed(
     2
@@ -195,7 +197,7 @@ function printError(error) {
   const alert = document.createElement("div");
   alert.textContent = "Sorry we do not have the information on that city";
   alert.classList = "alert alert-danger";
-  results.appendChild(alert);
+  description.appendChild(alert);
 }
 
 function clearScreen() {
@@ -204,39 +206,27 @@ function clearScreen() {
   description.innerHTML = "";
 }
 
-// const mainPageBtns = document.querySelectorAll(".main-page-city");
-
-// mainPageBtns.forEach((el) => {
-//   el.addEventListener("click", function (e) {
-//     clearScreen();
-//     //console.log(tableBody);
-//     //results.innerHTML = "Hellp";
-
-//     event.preventDefault();
-//     const userInputCity = getUserInput();
-//     fetch(
-//       `https://api.teleport.org/api/urban_areas/slug:${userInputCity}/scores/`
-//     )
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         showData(data, inputBtn.value);
-//       })
-//       .catch((reject) => {
-//         printError();
-//         return reject;
-//       });
-//   });
-// });
-
 function upperCaseWords(str) {
-  const arr = str.split(" ");
-  if (arr.length > 1) {
+  // const arr = str.split(" ");
+  // if (arr.length > 1) {
+  //   const newArr = arr.map((el) => {
+  //     return el[0].toUpperCase() + el.slice(1);
+  //   });
+
+  //   return newArr.join(" ");
+  // }
+  if (str.includes(" ")) {
+    const arr = str.split(" ");
     const newArr = arr.map((el) => {
       return el[0].toUpperCase() + el.slice(1);
     });
 
+    return newArr.join(" ");
+  } else if (str.includes("-")) {
+    const autoArr = str.split("-");
+    const newArr = autoArr.map((el) => {
+      return el[0].toUpperCase() + el.slice(1);
+    });
     return newArr.join(" ");
   } else {
     return str[0].toUpperCase() + str.slice(1);
