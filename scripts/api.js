@@ -134,11 +134,11 @@ searchBtn.addEventListener("click", function (event) {
     .then((data) => {
       console.log(data);
       showData(data, upperCaseWords(inputSearch.value));
+    })
+    .catch((reject) => {
+      printError();
+      return reject;
     });
-  // .catch((reject) => {
-  //   printError();
-  //   return reject;
-  // });
 });
 
 function showData(data, userInput) {
