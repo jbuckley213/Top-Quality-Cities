@@ -88,11 +88,11 @@ function autoSearchEventListen(value) {
     .then((data) => {
       console.log(data);
       showData(data, upperCaseWords(value));
+    })
+    .catch((reject) => {
+      printError(reject);
+      return reject;
     });
-  // .catch((reject) => {
-  //   printError(reject);
-  //   return reject;
-  // });
 }
 
 //////////////////////////////////

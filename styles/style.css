@@ -94,7 +94,7 @@ header img {
   height: 30rem;
   width: 30rem;
   margin: 5rem auto 0 auto;
-  background: center url("./images/general-city.jpg");
+  background: center url("../images/general-city.jpg");
   background-size: cover;
 }
 
@@ -375,7 +375,7 @@ footer p {
   width: 100%;
   justify-content: center;
   height: 400px;
-  background: center url("./images/moscow.jpg") no-repeat;
+  background: center url("../images/moscow.jpg") no-repeat;
   background-size: cover;
   color: #f4f3f4;
   animation: fadeIn 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -426,7 +426,7 @@ footer p {
 /* Search page */
 
 .search-header {
-  background: center url("./images/travel-draw.jpg") no-repeat;
+  background: center url("../images/travel-draw.jpg") no-repeat;
   background-size: cover;
   height: 20rem;
 }
