@@ -30,6 +30,10 @@ function cleanInputAutoSearch(str) {
 // Auto complete search
 ////////////////////////////////
 
+////////////////////////////////
+//ASK ABOUT API
+////////////////////////////////
+
 inputSearch.addEventListener("keyup", function (event) {
   fetch(`https://api.teleport.org/api/cities/?search=${event.target.value}`)
     .then((response) => {
@@ -83,7 +87,7 @@ function autoSearchEventListen(value) {
       showData(data, upperCaseWords(value));
     })
     .catch((reject) => {
-      printError();
+      printError(reject);
       return reject;
     });
 }
@@ -184,8 +188,9 @@ function addToTable(categories) {
   });
 }
 
-function printError() {
+function printError(error) {
   clearScreen();
+  console.log(error);
   resultsTable.classList = "inactive";
   const alert = document.createElement("div");
   alert.textContent = "Sorry we do not have the information on that city";
