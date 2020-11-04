@@ -4,6 +4,8 @@ const searchBtn = document.querySelector("#search-btn");
 const results = document.querySelector("#test-results");
 const resultsTable = document.querySelector("#results-table");
 const tableBody = document.querySelector("#table-body");
+const tableBodyTwo = document.querySelector("#table-body-2");
+
 const inputSearch = document.querySelector("#city");
 const description = document.querySelector("#description");
 const cityTitle = document.querySelector("#city-title");
@@ -86,11 +88,11 @@ function autoSearchEventListen(value) {
     .then((data) => {
       console.log(data);
       showData(data, upperCaseWords(value));
-    })
-    .catch((reject) => {
-      printError(reject);
-      return reject;
     });
+  // .catch((reject) => {
+  //   printError(reject);
+  //   return reject;
+  // });
 }
 
 //////////////////////////////////
@@ -154,9 +156,76 @@ function showData(data, userInput) {
   description.innerHTML = data.summary;
   results.insertBefore(description, resultsTable);
   addToTable(data.categories);
+  //doubleTable(data.categories);
 }
 
+// function doubleTable(data) {
+//   for (let i = 0; i < data.length; i += 2) {
+//     addToTable(data[i], data[i + 1]);
+//   }
+// }
+
 function addToTable(categories) {
+  // const rowOne = document.createElement("tr");
+  // const rowTwo = document.createElement("tr");
+
+  // const rowElementNameOne = document.createElement("td");
+  // const rowElementBarOne = document.createElement("td");
+  // const rowElementValueOne = document.createElement("td");
+
+  // const rowElementNameTwo = document.createElement("td");
+  // const rowElementBarTwo = document.createElement("td");
+  // const rowElementValueTwo = document.createElement("td");
+
+  // const barDivOne = document.createElement("div");
+  // const barDivTwo = document.createElement("div");
+
+  // const elementScoreOne = (
+  //   Math.round(dataOne.score_out_of_10 * 100) / 100
+  // ).toFixed(2);
+
+  // const elementScoreTwo = (
+  //   Math.round(dataTwo.score_out_of_10 * 100) / 100
+  // ).toFixed(2);
+
+  // if (window.innerWidth > 767) {
+  //   barDivOne.style.width = `${2 * elementScoreOne}rem`;
+  //   barDivTwo.style.width = `${2 * elementScoreTwo}rem`;
+  // } else {
+  //   barDivOne.style.width = `${0.9 * elementScoreOne}rem`;
+  //   barDivTwo.style.width = `${0.9 * elementScoreTwo}rem`;
+  // }
+  // //barDiv.style.width = `${2 * elementScore}rem`;
+  // barDivOne.style.backgroundColor = dataOne.color;
+  // barDivOne.classList = "bar-chart";
+  // barDivTwo.style.backgroundColor = dataTwo.color;
+  // barDivTwo.classList = "bar-chart";
+
+  // rowElementNameOne.innerHTML = dataOne.name;
+  // rowElementNameOne.classList = "name-width";
+  // rowElementNameTwo.innerHTML = dataTwo.name;
+  // rowElementNameTwo.classList = "name-width";
+
+  // rowElementBarOne.appendChild(barDivOne);
+  // rowElementValueOne.innerHTML = elementScoreOne;
+  // rowElementValueOne.style.width = "2rem";
+  // rowElementValueOne.style.margin = "2rem";
+
+  // rowElementBarTwo.appendChild(barDivTwo);
+  // rowElementValueTwo.innerHTML = elementScoreTwo;
+  // rowElementValueTwo.style.width = "2rem";
+
+  // rowOne.appendChild(rowElementNameOne);
+  // rowOne.appendChild(rowElementBarOne);
+  // rowOne.appendChild(rowElementValueOne);
+  // //tableBody.appendChild(row);
+
+  // rowTwo.appendChild(rowElementNameTwo);
+  // rowTwo.appendChild(rowElementBarTwo);
+  // rowTwo.appendChild(rowElementValueTwo);
+  // tableBody.appendChild(rowOne);
+  // tableBodyTwo.appendChild(rowTwo);
+
   categories.forEach((el) => {
     const row = document.createElement("tr");
     const rowElementName = document.createElement("td");

@@ -62,7 +62,7 @@ window.addEventListener("scroll", (e) => {
   }
 });
 
-callApi("dublin");
+//callApi("dublin");
 
 function callApi(city, indexOne, indexTwo, indexThree, indexFour, div) {
   fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)
@@ -83,10 +83,10 @@ function printError() {
 }
 
 function displayData(data, indexOne, indexTwo, indexThree, indexFour, div) {
-  const divOne = createBarDiv(indexOne, data);
-  const divTwo = createBarDiv(indexTwo, data);
-  const divThree = createBarDiv(indexThree, data);
-  const divFour = createBarDiv(indexFour, data);
+  const divOne = createBarDiv(data, indexOne);
+  const divTwo = createBarDiv(data, indexTwo);
+  const divThree = createBarDiv(data, indexThree);
+  const divFour = createBarDiv(data, indexFour);
 
   div.appendChild(divOne);
   div.appendChild(divTwo);
@@ -94,7 +94,7 @@ function displayData(data, indexOne, indexTwo, indexThree, indexFour, div) {
   div.appendChild(divFour);
 }
 
-function createBarDiv(index, data) {
+function createBarDiv(data, index) {
   const barDiv = document.createElement("div");
   const spanName = document.createElement("span");
   const spanValue = document.createElement("span");

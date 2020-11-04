@@ -29,6 +29,7 @@ p {
   flex-wrap: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 #nav-id img {
@@ -488,6 +489,12 @@ footer p {
   line-height: 1.8;
 }
 
+.flex-div {
+  display: flex;
+
+  flex-wrap: row wrap;
+}
+
 #house-bar {
   border-radius: 10px;
   height: 20px;
@@ -594,5 +601,9 @@ td p {
   }
   #test-results {
     width: 18rem;
+  }
+
+  .bar-chart {
+    width: 50%;
   }
 }
