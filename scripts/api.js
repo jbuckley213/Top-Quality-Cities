@@ -142,7 +142,7 @@ searchBtn.addEventListener("click", function (event) {
 });
 
 function showData(data, userInput) {
-  results.classList = "active";
+  results.classList.remove("inactive");
   resultsTable.classList.remove("inactive");
 
   const cityScore = (Math.round(data.teleport_city_score * 100) / 100).toFixed(
@@ -262,7 +262,7 @@ function addToTable(categories) {
 function printError(error) {
   clearScreen();
   console.log(error);
-  resultsTable.classList = "inactive";
+  resultsTable.classList.add("inactive");
   const alert = document.createElement("div");
   alert.textContent = "Sorry we do not have the information on that city";
   alert.classList = "alert alert-danger";

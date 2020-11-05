@@ -33,10 +33,11 @@ p {
 }
 
 #nav-id img {
-  width: 20%;
+  width: 80%;
+  margin-left: 1rem;
 }
 #nav-id a {
-  margin: 15px;
+  margin: 0 15px;
   text-decoration: none;
   color: #5b5e6d;
 }
@@ -47,20 +48,9 @@ p {
 #logo {
   width: 15rem;
 }
-#dropdown {
-  display: flex;
-}
-
-#nav-margin {
-  margin: 0;
-}
 
 #navbarSupportedContent1 {
   margin-left: 15rem;
-}
-
-.search-button {
-  margin-bottom: 10px;
 }
 
 /*  header  */
@@ -108,6 +98,7 @@ header img {
 
 .style-btn {
   background-color: #222b37;
+  margin-bottom: 10px;
 
   color: rgb(255, 255, 255);
 }
@@ -314,7 +305,8 @@ footer p {
 }
 
 .signup-img {
-  height: 28rem;
+  height: auto;
+
   width: 40rem;
   display: flex;
   flex-direction: row;
@@ -334,8 +326,11 @@ footer p {
 /* /////////////////*/
 /* login */
 
+.signup-title {
+  margin-top: 3rem;
+}
 .login-title {
-  margin-bottom: 3rem;
+  margin: 3rem;
 }
 
 .login-img {
@@ -385,14 +380,73 @@ footer p {
   position: relative;
   top: -110px;
 }
-#about-article p {
+.about-article p {
   line-height: 1.8;
   width: 70%;
   margin: 70px auto;
 }
-#about-article {
+.about-article {
+  margin-top: 3rem;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.question-div {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  perspective: 500px;
+  margin: 1rem 2rem;
+}
+
+.faces {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #f4f3f4;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.question-div:hover .front {
+  transform: rotateY(180deg);
+}
+.question-div:hover .back-one {
+  transform: rotateY(0deg);
+  background-color: rgb(160, 105, 220);
+  color: white;
+}
+.question-div:hover .back-two {
+  transform: rotateY(0deg);
+  background-color: rgb(241, 158, 57);
+  color: white;
+}
+.question-div:hover .back-three {
+  transform: rotateY(0deg);
+  background-color: rgb(56, 140, 221);
+  color: white;
+}
+.question-div a {
+  color: white;
+}
+.back-one {
+  transform: rotateY(-180deg);
+}
+.back-two {
+  transform: rotateY(-180deg);
+}
+.back-three {
+  transform: rotateY(-180deg);
+}
+
+.back-two p {
+  margin-top: 2rem;
+}
+
 .inactive {
   opacity: 0;
 }
@@ -446,6 +500,10 @@ footer p {
   flex-direction: column;
   /*align-items: center;*/
   width: 18rem;
+}
+
+.redirect {
+  font-size: 1rem;
 }
 
 /*.error-div {
@@ -533,6 +591,7 @@ td p {
   width: 1px;
   text-align: center;
   color: white;
+  transition: all 1s;
 }
 
 .wider {
@@ -605,5 +664,12 @@ td p {
 
   .bar-chart {
     width: 50%;
+  }
+  #nav-id img {
+    width: 35%;
+    margin: 0;
+  }
+  .back-three p {
+    margin-left: 1rem;
   }
 }

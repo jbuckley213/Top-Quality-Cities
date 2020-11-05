@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/191c6ace6a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link
       rel="stylesheet"
@@ -19,7 +23,7 @@
       class="navbar navbar-light navbar-expand-lg light-blue lighten-4"
     >
       <a id="logo" class="navbar-brand" href="index.html"
-        ><img src="/images/logo.png" alt="logo"
+        ><img src="./images/logo.png" alt="logo"
       /></a>
 
       <button
@@ -58,12 +62,35 @@
       <h1>About Us</h1>
       <!--<h4>Easy way to find out which is the best city for you!</h4>-->
     </section>
-    <article id="about-article" class="inactive">
-      <div class="card" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title">Where is the data from?</h5>
+    
+    </article>
+    <article class="about-article">
+      <div class="question-div">
+        <div class="faces front"><p>Where do we get the data from?</p></div>
+        <div class="faces back-one">
+          <p>
+            The data is obtained from Teleport API. See the documentation
+            <a href="https://developers.teleport.org/api/">here.</a>
+          </p>
         </div>
       </div>
+      <div class="question-div">
+        <div class="faces front"><p>Why did we create this website?</p></div>
+        <div class="faces back-two">
+          <p>
+            We are passionate about travel and exploring new cities. We want to
+            help people choose their next move.
+          </p>
+        </div>
+      </div>
+      <div class="question-div">
+        <div class="faces front"><p>How to contact us?</p></div>
+        <div class="faces back-three">
+          <p>Contact us at jbuckley213@gmail.com. Or call at +353876830340</p>
+        </div>
+      </div>
+    </article>
+    <article id="about-paragraph" class="about-article inactive">
       <p>
         Looking to move to a new city but not sure how to chose? Why not let
         data make the decision for you! Top Quality Cities lets you search for
@@ -72,7 +99,7 @@
         the individual rating for Housing, Startups, Tolerance, Environmental
         Quality and many more. Find your new city today!
       </p>
-    </article>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -12,6 +12,9 @@ class Database {
   };
 
   saveNewUser = (newUser) => {
+    /*if (validator.errors.length !== 0) {
+      return 0;
+    }*/
     const usersArr = this.getAllUsers();
     usersArr.push(newUser);
 
