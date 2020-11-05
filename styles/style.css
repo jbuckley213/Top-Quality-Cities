@@ -299,6 +299,9 @@ footer p {
 
   justify-content: center;
   height: auto;
+  height: 60rem;
+  background: center url("../images/login-new2.jpg") no-repeat;
+  background-size: cover;
 }
 
 .login {
@@ -317,6 +320,7 @@ footer p {
   height: 35rem;
   border-radius: 10px;
   opacity: 0.9;
+  background-color: white;
 }
 .side-error {
   display: flex;
@@ -395,7 +399,7 @@ footer p {
   margin-top: 3rem;
 }
 .login-title {
-  margin: 3rem;
+  margin: 3rem auto;
 }
 
 .login-img {
