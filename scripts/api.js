@@ -9,6 +9,7 @@ const tableBodyTwo = document.querySelector("#table-body-2");
 const inputSearch = document.querySelector("#city");
 const description = document.querySelector("#description");
 const cityTitle = document.querySelector("#city-title");
+const cityRating = document.querySelector("#city-rating");
 const autoCompleteDiv = document.querySelector("#auto-complete");
 
 function getUserInput() {
@@ -149,12 +150,13 @@ function showData(data, userInput) {
     2
   );
 
-  cityTitle.innerHTML = userInput + ": " + cityScore;
-
-  results.insertBefore(cityTitle, resultsTable);
+  cityTitle.innerHTML = userInput;
+  cityRating.innerHTML = `${cityScore}/100`;
+  cityRating.style.marginTop = "10px";
+  //results.insertBefore(cityTitle, resultsTable);
 
   description.innerHTML = data.summary;
-  results.insertBefore(description, resultsTable);
+  //results.insertBefore(description, resultsTable);
   addToTable(data.categories);
   //doubleTable(data.categories);
 }
@@ -273,6 +275,7 @@ function clearScreen() {
   tableBody.innerHTML = "";
   cityTitle.innerHTML = "";
   description.innerHTML = "";
+  cityRating.innerHTML = "";
 }
 
 function upperCaseWords(str) {

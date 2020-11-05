@@ -105,13 +105,6 @@ class Signup {
         this.repeatPasswordMessage.appendChild(p);
       }
     });
-
-    // errorStringArr.forEach((str) => {
-    //   const p = document.createElement("p");
-    //   p.textContent = str;
-    //   p.classList = "alert alert-danger";
-    //   this.errorsWrapper.appendChild(p);
-    // });
   };
 
   saveData = (event) => {
@@ -125,12 +118,17 @@ class Signup {
     const newUser = new User(name, city, email, password);
 
     db.saveNewUser(newUser);
-
+    console.log(this.errorsWrappers);
     this.nameInput.value = "";
     this.cityInput.value = "";
     this.emailInput.value = "";
     this.passwordInput.value = "";
     this.repeatPasswordInput.value = "";
+    this.errorsWrapper.innerHTML = `Welcome ${name}`;
+    this.errorsWrapper.classList.add("alert");
+    this.errorsWrapper.classList.add("alert-success");
+
+    this.redirect();
   };
 
   addListeners = () => {
@@ -142,6 +140,12 @@ class Signup {
     );
 
     this.buttonInput.addEventListener("click", this.saveData);
+  };
+
+  redirect = () => {
+    setTimeout(function () {
+      location.assign("login.html");
+    }, 3000);
   };
 }
 

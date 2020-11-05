@@ -41,13 +41,9 @@ function debounce(func, wait = 20, immediate = true) {
 // }
 
 let sticky = barcaImg.offsetTop;
-window.addEventListener("scroll", (e) => {
-  // if (window.pageYOffset >= sticky) {
-  //   displayDivBarca.classList.add("stick");
-  // } else {
-  //   displayDivBarca.classList.remove("stick");
-  // }
+window.addEventListener("scroll", debounce(scroll));
 
+function scroll() {
   if (pageYOffset > 300) {
     barcaImg.classList = "active";
     displayDivBarca.classList = "active";
@@ -60,9 +56,7 @@ window.addEventListener("scroll", (e) => {
     vancouverImg.classList = "active";
     displayDivVancouver.classList = "active";
   }
-});
-
-//callApi("dublin");
+}
 
 function callApi(city, indexOne, indexTwo, indexThree, indexFour, div) {
   fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)

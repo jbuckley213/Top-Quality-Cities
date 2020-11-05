@@ -33,7 +33,7 @@ p {
 }
 
 #nav-id img {
-  width: 80%;
+  width: 40%;
   margin-left: 1rem;
 }
 #nav-id a {
@@ -93,7 +93,7 @@ header img {
   font-size: 0.7rem;
   width: 10rem;
   height: 1.7rem;
-  box-shadow: 1px 5px rgb(0, 0, 0, 0.1);
+  box-shadow: 20px 20px 20px black;
 }
 
 .style-btn {
@@ -281,15 +281,26 @@ footer p {
   height: auto;
 }
 
-.signup {
+.login {
   margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+.signup {
+  margin: 50px auto 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .signup input {
-  margin: 10px 0;
+  margin: 20px;
   width: 300px;
+  text-align: center;
+}
+.login input {
+  margin: 15px;
+  width: 300px;
+  text-align: center;
 }
 
 .signup label {
@@ -299,15 +310,19 @@ footer p {
 .signup button {
   margin: 20px auto;
 }
+.login button {
+  margin: 20px auto;
+}
 
 .error-div {
-  height: 5-px;
+  /*height: 2px;*/
+  margin: 0 auto;
 }
 
 .signup-img {
-  height: auto;
+  height: 30rem;
 
-  width: 40rem;
+  width: 35rem;
   display: flex;
   flex-direction: row;
   /*background: center url("../images/skyline.jpg") no-repeat;
@@ -484,15 +499,8 @@ footer p {
   background-size: cover;
   height: 20rem;
 }
-
-.signup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.signup input {
-  margin-bottom: 0;
+.search-header h1 {
+  margin: 0.3rem;
 }
 
 .signup div {
@@ -504,6 +512,7 @@ footer p {
 
 .redirect {
   font-size: 1rem;
+  margin: 0 auto;
 }
 
 /*.error-div {
@@ -512,6 +521,11 @@ footer p {
 
 .error-message {
   margin-top: 10px;
+}
+
+.message-container {
+  margin: 1rem auto;
+  text-align: center;
 }
 
 #results {
@@ -671,5 +685,11 @@ td p {
   }
   .back-three p {
     margin-left: 1rem;
+  }
+  .signup-img {
+    height: auto;
+  }
+  .fas-bars {
+    color: white;
   }
 }

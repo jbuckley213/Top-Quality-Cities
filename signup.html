@@ -62,18 +62,28 @@
         <img src="images/skyline.jpg" alt="city-pic" />
       </div>
       <form class="signup">
-        <label for="fname">Name: </label>
-        <input type="text" id="fname" name="fname" />
-        <label for="city">City: </label>
-        <input type="text" id="city" name="city" />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" />
+        <!--<label for="fname">Name: </label>-->
+        <input type="text" id="fname" name="fname" placeholder="Name" />
+        <!--<label for="city">City: </label> -->
+        <input type="text" id="city" name="city" placeholder="City" />
+        <!-- <label for="email">Email</label>-->
+        <input type="email" id="email" name="email" placeholder="Email" />
         <div id="email-error" class="error-div"></div>
-        <label for="password">Password: </label>
-        <input type="password" id="password1" name="password1" />
+        <!-- <label for="password">Password: </label>-->
+        <input
+          type="password"
+          id="password1"
+          name="password1"
+          placeholder="Password"
+        />
         <div id="password-error" class="error-div"></div>
-        <label for="password">Repeat Password: </label>
-        <input type="password" id="password2" name="password2" />
+        <!--<label for="password">Repeat Password: </label>-->
+        <input
+          type="password"
+          id="password2"
+          name="password2"
+          placeholder="Repeat Password"
+        />
         <div id="repeat-password-error" class="error-div"></div>
 
         <button
@@ -87,8 +97,8 @@
         <p class="redirect">
           Aleady have an account? <a href="login.html">Login here</a>
         </p>
+        <div class="message-container"></div>
       </form>
-      <div class="message-container"></div>
     </section>
 
     <script
