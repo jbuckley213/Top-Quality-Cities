@@ -26,12 +26,14 @@ class Login {
 
     if (!user) {
       p.textContent = "Email or password are incorrect";
+      p.classList = "alert alert-danger";
+      this.messageContainer.appendChild(p);
     } else {
       p.textContent = `Hello ${user.name}!`;
       p.classList = "correct-message alert alert-success";
+      this.redirect();
+      this.messageContainer.appendChild(p);
     }
-    this.messageContainer.appendChild(p);
-    this.redirect();
   };
 
   redirect = () => {
