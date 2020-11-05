@@ -14,6 +14,7 @@ class Signup {
     this.repeatPasswordMessage = document.querySelector(
       "#repeat-password-error"
     );
+    this.signupForm = document.querySelector(".signup");
   }
 
   // handleEmail
@@ -79,6 +80,7 @@ class Signup {
     // this.emailMessage.appendChild(p);
 
     errorStringArr.forEach((str) => {
+      this.signupForm.style.height = "60rem";
       if (str.includes("already taken")) {
         const p = document.createElement("p");
         p.classList = "alert alert-danger error-message";
@@ -105,6 +107,9 @@ class Signup {
         this.repeatPasswordMessage.appendChild(p);
       }
     });
+    if (errorStringArr.length === 0) {
+      this.signupForm.style.height = "35rem";
+    }
   };
 
   saveData = (event) => {
