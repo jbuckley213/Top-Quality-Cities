@@ -78,4 +78,4 @@ The **MVP** will include:
 
 #### Slides
 
-[My Presentation]()
+[My Presentation](https://docs.google.com/presentation/d/1-5E9mCKidtO0VBnJrPpNCKp5xiTDRFCamXkObuHqRHk/edit?usp=sharing)
