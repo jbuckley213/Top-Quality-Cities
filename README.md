@@ -33,23 +33,25 @@ The **MVP** will include:
 
 ## Wireframes
 
-- [My Wireframe](https://drive.google.com/file/d/1IyfzHvOrcgdNjPtlPb2Lvv9oifkwPITc/view?usp=sharing)
-- [Navigation / User Flow](https://drive.google.com/file/d/12K_FsgXLORPBLkXAlIjAHSUQFFXbL3KF/view?usp=sharing)
+- [My Wireframe]
+- [Navigation / User Flow]
   ​
 
 ## Data structure
 
 - **root/**
   - index.html
-  - dashboard.html
-  - faq.html
+  - search.html
+  - about.html
   - login.html
   - signup.html
   - **css/**
     - style.css
-    - burger.css
+    - reset.css
   - **src/**
-    - Main.js
+    - index.js
+    - api.js
+    - about.js
     - Login.js
     - Database.js
     - Signup.js
