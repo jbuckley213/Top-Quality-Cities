@@ -554,6 +554,7 @@ footer p {
 }
 .search-header h1 {
   margin: 0.3rem;
+  text-align: center;
 }
 
 .signup div {
@@ -666,7 +667,7 @@ td p {
 }
 
 .name-width {
-  width: 3rem;
+  width: 1rem;
 }
 
 #description {
@@ -700,6 +701,9 @@ td p {
   .about-section {
     /* same as normal */
     height: 400px;
+  }
+  .about-section {
+    color: #f4f3f4;
   }
 
   .stick {

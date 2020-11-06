@@ -242,7 +242,7 @@ function addToTable(categories) {
     if (window.innerWidth > 767) {
       barDiv.style.width = `${2 * elementScore}rem`;
     } else {
-      barDiv.style.width = `${0.9 * elementScore}rem`;
+      barDiv.style.width = `${0.75 * elementScore}rem`;
     }
     //barDiv.style.width = `${2 * elementScore}rem`;
     barDiv.style.backgroundColor = el.color;
@@ -252,7 +252,7 @@ function addToTable(categories) {
 
     rowElementBar.appendChild(barDiv);
     rowElementValue.innerHTML = elementScore;
-    rowElementValue.style.width = "2rem";
+    rowElementValue.style.width = "1rem";
 
     row.appendChild(rowElementName);
     row.appendChild(rowElementBar);
